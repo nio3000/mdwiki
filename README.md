@@ -1,8 +1,8 @@
 # MDWiki - MarkDown Wiki
 
-This project provide wiki library based on markdown and file system.
+This project provide confluence liked wiki library based on markdown and file system.
 
-It would be good choice using [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor) and MDWiki for your wiki application.
+It would be good choice using [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor) with MDWiki.
 
 ## Features
 
@@ -14,12 +14,18 @@ It would be good choice using [SimpleMDE](https://github.com/sparksuite/simplemd
 
 ### low-level
 
-- file-based database
+- File Base Database
     - CRUD
-    - file, directory
-    - authentication
     - dump, migrate
-- history of wiki content
-    - PyGit wrapper
-    - history parser
-- markdown syntax checker
+    - history of wiki content
+        - PyGit wrapper
+        - history parser
+    - page manager
+        - markdown syntax checker
+        - page is directory which includes meta.json, content-(locale).md and pages
+    - token
+        - authentication
+        - authorization
+- User Permission
+    - provide middleware for FBD token
+- i18n
