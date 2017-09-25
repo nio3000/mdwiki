@@ -6,15 +6,8 @@ class FileManager:
         """
         Constructor of FileManager
         :param file_path: FileManager's default file_path. FileManager use `self.file_path` as prefix if exist.
-        :type file_path: str
         """
         self.file_path = file_path
-
-    def __relative_path(self, file_path):
-        if file_path is None:
-            return self.file_path
-        else:
-            return os.path.join(self.file_path, file_path)
 
     def create(self, content: str, file_path: str = None) -> bool:
         """
@@ -71,3 +64,9 @@ class FileManager:
         else:
             os.remove(relative_path)
             return True
+
+    def __relative_path(self, file_path):
+        if file_path is None:
+            return self.file_path
+        else:
+            return os.path.join(self.file_path, file_path)
