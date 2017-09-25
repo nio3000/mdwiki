@@ -2,12 +2,12 @@ import os
 
 
 class FileManager:
-    def __init__(self, file_path: str = '/'):
+    def __init__(self, directory_path: str = '/'):
         """
         Constructor of FileManager
-        :param file_path: FileManager's default file_path. FileManager use `self.file_path` as prefix if exist.
+        :param directory_path: FileManager's default file_path. FileManager use `self.file_path` as prefix if exist.
         """
-        self.file_path = file_path
+        self.directory_path = directory_path
 
     def create(self, content: str, file_path: str = None) -> bool:
         """
@@ -67,6 +67,6 @@ class FileManager:
 
     def __relative_path(self, file_path):
         if file_path is None:
-            return self.file_path
+            return self.directory_path
         else:
-            return os.path.join(self.file_path, file_path)
+            return os.path.join(self.directory_path, file_path)
