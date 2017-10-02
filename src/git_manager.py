@@ -10,7 +10,7 @@ class GitManager:
         """
         Commit file.
         :param file_path:
-        :return: False if commit nothing
+        :return: False if nothing changed
         """
 
     def revert(self, file_path: str = '/', revision: int = None) -> bool:
@@ -22,14 +22,14 @@ class GitManager:
         :return: False if revision is None or non-existence
         """
 
-    def get_logs(self, file_path: str = '/') -> str:
+    def history(self, file_path: str = '/') -> str:
         """
-        Return all logs where file_path
+        return list of tuple of revision and changed time
         :param file_path:
         :return:
         """
 
-    def get_log(self, file_path: str = '/', revision: int = None) -> str:
+    def content_by_revision(self, file_path: str = '/', revision: int = None) -> str:
         """
         Return detail revision log where file_path.
         Return latest if revision is None
