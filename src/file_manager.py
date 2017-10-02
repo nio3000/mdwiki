@@ -20,8 +20,8 @@ class FileManager:
         if os.path.exists(relative_path):
             return False
         else:
-            with open(relative_path, 'w') as infile:
-                infile.write(content)
+            with open(relative_path, 'w') as outfile:
+                outfile.write(content)
             return True
 
     def read(self, file_path: str = None) -> str:
@@ -34,8 +34,8 @@ class FileManager:
         if not os.path.exists(relative_path):
             raise FileNotFoundError
         else:
-            with open(relative_path, 'r') as outfile:
-                return os.linesep.join(outfile.readlines())
+            with open(relative_path, 'r') as infile:
+                return os.linesep.join(infile.readlines())
 
     def update(self, content: str, file_path: str = None) -> bool:
         """
@@ -48,8 +48,8 @@ class FileManager:
         if not os.path.exists(relative_path):
             return False
         else:
-            with open(relative_path, 'w') as infile:
-                infile.write(content)
+            with open(relative_path, 'w') as outfile:
+                outfile.write(content)
             return True
 
     def delete(self, file_path: str = None) -> bool:
