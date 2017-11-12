@@ -1,0 +1,6 @@
+gitdb2==2.0.3
+GitPython==2.1.7
+ldap==1.0.2
+ldap3==2.3
+pyasn1==0.3.7
+smmap2==2.0.3
