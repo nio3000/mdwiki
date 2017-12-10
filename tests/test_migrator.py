@@ -62,4 +62,6 @@ class TestMigrator(TestCase):
             infile.write(self.sentence2)
 
         migrator = Migrator(space_directory_path)
-        migrator.dump(self.migration_file_name)
+        result = migrator.dump(self.migration_file_name)
+
+        self.assertEqual(True, result)
