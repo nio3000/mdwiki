@@ -3,20 +3,21 @@ import ldap
 from enum import Enum
 
 
-class ServerResult(Enum):
-    SUCCESS = 200
-    SERVER_NOT_FOUND = 404
-
-
-class LoginResult(ServerResult):
-    WRONG_ID_OR_PASSWORD = 403
-
-
-class RequestAccessResult(ServerResult):
-    DENIED = 403
-
-
 class AuthManager:
+    class _ServerResult(Enum):
+        SERVER_NOT_FOUND = 0
+        WRONG_REQUEST = 1
+
+    class LoginResult(_ServerResult):
+        WRONG_ID_OR_PASSWORD = 0
+
+    class LogoutResult(_ServerResult):
+        SUCCESS = 0
+
+    class RequestAccessResult(_ServerResult):
+        APPROVED = 0
+        DENIED = 1
+
     def __init__(self, server="127.0.0.1"):
         """
         Constructor of AuthManager
