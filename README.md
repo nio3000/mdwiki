@@ -1,14 +1,31 @@
 # MDWiki - MarkDown Wiki
 
-## Summary
+## Introduction
 
-This project provide confluence liked wiki library based on markdown and file system.
+This project name is MDWiki, MarkDown Wiki.
 
-It would be good choice using [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor) with MDWiki.
+It's a python wiki engine providing confluence-like wiki system with MarkDown syntax.
 
-## Features
+## Main Features
 
-- CRUD of data
-- dump, migration of data
+- CRUD of content
+- i18n for content
 - history of wiki content
-- i18n
+- dump, migration of content
+- LDAP base authentication for page
+
+## Product Perspective
+
+![product perspective](etc/product_perspective.PNG)
+
+## Interface
+
+TBD
+
+## Build
+
+TBD
+
+## Test
+
+TBD
